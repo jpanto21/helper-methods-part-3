@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Helper Methods Part 3</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+   <%= render partial: "shared/cdn_assests" %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+   
   </head>
 
   <body>
-    <div style="color: green;">
-      <%= notice %>
-    </div>
+   <%= render partial: "shared/navbar" %>
 
-    <div style="color: red;">
-      <%= alert %>
-    </div>
-    
+  <div class="container mt-3">
+   <%= render partial: "shared/flash_messages" %>
+  
     <%= yield %>
+  </div>
   </body>
 </html>
